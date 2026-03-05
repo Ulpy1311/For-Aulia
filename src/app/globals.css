@@ -1,0 +1,258 @@
+@import "tailwindcss";
+
+/* 
+  NOTE: The red warnings below for @plugin, @custom-variant, and @theme are 
+  FALSE POSITIVES from VS Code. This is valid Tailwind CSS v4 syntax and 
+  the build works perfectly. Please do not worry about them! 
+*/
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #faf8f5;
+  --foreground: #1c1a17;
+  --desktop-pov-width: min(2560px, calc(100vh * 16 / 9), 100vw);
+  --desktop-content-max: clamp(1040px, calc(var(--desktop-pov-width) * 0.6667), 1706px);
+  --desktop-gutter: clamp(14px, 2vw, 32px);
+  --nav-height: clamp(56px, 3.3vw, 64px);
+  --font-body-current: var(--font-inter);
+  --font-body-stack: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-serif-current: var(--font-playfair);
+  --secondary: #f0ede8;
+  --secondary-foreground: #1c1a17;
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+  --card: #fffefa;
+  --card-foreground: #1c1a17;
+  --popover: #fffefa;
+  --popover-foreground: #1c1a17;
+  --primary: #1c1a17;
+  --primary-foreground: #faf8f5;
+  --muted: #f0ede8;
+  --muted-foreground: #6b6560;
+  --border: #e0dcd5;
+  --input: #e0dcd5;
+  --ring: #1c1a17;
+  --radius: 0.5rem;
+}
+
+:root[data-typo='romantic'] {
+  --font-body-current: var(--font-inter);
+  --font-serif-current: var(--font-playfair);
+}
+
+:root[data-typo='journal'] {
+  --font-body-current: var(--font-inter);
+  --font-serif-current: var(--font-source-serif);
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --desktop-content-max: 100%;
+    --desktop-gutter: clamp(14px, 4.5vw, 24px);
+  }
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #e5e5e5;
+  --secondary: #262626;
+  --secondary-foreground: #e5e5e5;
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+  --card: #171717;
+  --card-foreground: #e5e5e5;
+  --popover: #171717;
+  --popover-foreground: #e5e5e5;
+  --primary: #e5e5e5;
+  --primary-foreground: #0a0a0a;
+  --muted: #262626;
+  --muted-foreground: #9ca3af;
+  --border: #262626;
+  --input: #262626;
+  --ring: #e5e5e5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-body-stack);
+  --font-display: var(--font-anton), impact, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+  --font-serif: var(--font-serif-current), "Source Serif 4", "Lora", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+
+  to {
+    height: 0;
+  }
+}
+
+@layer base {
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Lora as the default body reading font — warm, Claude.ai-like */
+    font-family: var(--font-serif);
+    line-height: 1.78;
+    letter-spacing: 0.008em;
+    word-spacing: 0.02em;
+  }
+
+  /* ── Reading / Article Text ── */
+  p {
+    line-height: 1.8;
+    letter-spacing: 0.006em;
+  }
+
+  article p,
+  .prose p {
+    max-width: 65ch;
+    line-height: 1.85;
+  }
+
+  /* ── UI Elements stay in Inter (clean sans-serif) ── */
+  nav,
+  nav *,
+  header,
+  header *,
+  button,
+  button *,
+  [role="button"],
+  label,
+  footer [class*="font-mono"],
+  [class*="font-mono"],
+  [class*="font-sans"],
+  [class*="tracking-widest"],
+  [class*="tracking-wider"] {
+    font-family: var(--font-sans);
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: clamp(15px, calc(0.26vw + 11px), 18px);
+  }
+}
+
+/* MacOS Custom Cursors */
+@media (hover: hover) and (pointer: fine) {
+
+  body,
+  html {
+    cursor: url('/cursors/mac-default.svg') 1 1, auto;
+  }
+
+  /* Elements that should use pointer */
+  a,
+  button,
+  summary,
+  label[for],
+  [role="button"],
+  [data-cursor="interactive"],
+  .cursor-pointer,
+  select,
+  a *,
+  button *,
+  summary *,
+  label[for] * {
+    cursor: url('/cursors/mac-pointer.svg') 10 2, pointer;
+  }
+
+  /* Elements that typically contain selectable text */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  td,
+  th,
+  li,
+  dt,
+  dd,
+  blockquote,
+  q,
+  cite,
+  code,
+  pre,
+  input,
+  textarea,
+  [contenteditable="true"] {
+    cursor: url('/cursors/mac-text.svg') 12 12, text;
+  }
+}
+
+/* Utilities */
+@layer utilities {
+  .desktop-shell {
+    width: min(100%, var(--desktop-content-max));
+    margin-inline: auto;
+    padding-inline: var(--desktop-gutter);
+  }
+
+  .page-shell {
+    width: min(100%, var(--desktop-content-max));
+    margin-inline: auto;
+    padding-inline: var(--desktop-gutter);
+    padding-top: calc(var(--nav-height) + clamp(2rem, 3vw, 3rem));
+    padding-bottom: clamp(5rem, 6vw, 7rem);
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
