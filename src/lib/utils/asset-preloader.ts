@@ -48,7 +48,7 @@ class AssetPreloader {
             return;
         }
 
-        const promises = this.assets.map((src, index) => this.loadImage(src));
+        const promises = this.assets.map((src) => this.loadImage(src));
         await Promise.all(promises);
     }
 

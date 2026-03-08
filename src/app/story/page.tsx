@@ -28,7 +28,7 @@ export default function StoryPage() {
                     This page contains our LDR journey from the beginning until now. It all started with a small chat in August 2024.
                 </p>
                 <p className="font-serif text-base md:text-lg text-foreground/60 leading-relaxed">
-                    We've never met in person, but every chat, call, argument, and reconciliation is proof that this feeling keeps growing despite the distance.
+                    We&apos;ve never met in person, but every chat, call, argument, and reconciliation is proof that this feeling keeps growing despite the distance.
                 </p>
                 <p className="font-serif text-sm md:text-base text-foreground/50 leading-relaxed">
                     Open any card to see our story phase.
@@ -48,7 +48,7 @@ export default function StoryPage() {
 
             <div className="max-w-none text-muted-foreground font-serif text-base leading-relaxed border-t border-border pt-8">
                 <p>
-                    I wrote all this so our story stays intact. Not to blame anyone, but to remember that we both struggled from a distance that wasn't close.
+                    I wrote all this so our story stays intact. Not to blame anyone, but to remember that we both struggled from a distance that wasn&apos;t close.
                 </p>
                 <p className="mt-4">
                     From the first encounter to the hardest phase, everything is here.
