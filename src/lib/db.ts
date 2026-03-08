@@ -12,12 +12,18 @@ export interface DataStore {
     changelogs: unknown[];
 }
 
+// Helper import to seed
+import { memorySeed } from './story-data';
+import { notes } from './notes';
+import { changelogData } from '../components/features/ChangelogList';
+import { galleryData } from './gallery-data';
+
 // Initial dummy state mapping to your existing static files (simulated for now)
 const DEFAULT_DATA: DataStore = {
-    stories: [],
-    galleries: [],
-    notes: [],
-    changelogs: []
+    stories: memorySeed,
+    galleries: galleryData,
+    notes: notes,
+    changelogs: changelogData
 };
 
 // Lazy init the db
