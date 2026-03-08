@@ -54,7 +54,7 @@ export function LeftColumnContent() {
                 className="font-serif text-xl md:text-2xl lg:text-3xl text-foreground leading-[1.2] tracking-tight text-balance"
                 variants={itemVariants}
             >
-                This is an honest archive of what we've been through. There was laughter and exhaustion. There were conflicts and moments of relief.
+                This is an honest archive of what we&apos;ve been through. There was laughter and exhaustion. There were conflicts and moments of relief.
             </motion.p>
 
             <motion.div className="flex flex-wrap gap-1.5 mb-3 -mt-1" variants={itemVariants}>
@@ -73,10 +73,10 @@ export function LeftColumnContent() {
                 variants={itemVariants}
             >
                 <p>
-                    I keep everything here to keep the story intact. I don't blame anyone. I'm not asking for the past to return. I just don't want our feelings to fade away.
+                    I keep everything here to keep the story intact. I don&apos;t blame anyone. I&apos;m not asking for the past to return. I just don&apos;t want our feelings to fade away.
                 </p>
                 <p className="mt-6">
-                    If you're reading this, I hope you see the human side of it. We tried. We failed to communicate at that time. Then we learned how to grow up.
+                    If you&apos;re reading this, I hope you see the human side of it. We tried. We failed to communicate at that time. Then we learned how to grow up.
                 </p>
             </motion.div>
 

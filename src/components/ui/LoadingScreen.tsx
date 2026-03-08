@@ -66,7 +66,7 @@ const IMAGE_ASSETS = getAllAssets();
 
 export function LoadingScreen({ onComplete }: LoadingScreenProps) {
     const [wordIndex, setWordIndex] = useState(0);
-    const [currentAsset, setCurrentAsset] = useState("");
+
     const [assetHistory, setAssetHistory] = useState<string[]>([]);
     const [statusMsg, setStatusMsg] = useState(technicalMessages[0]);
     const [isPreloadComplete, setIsPreloadComplete] = useState(false);
@@ -132,7 +132,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
                 rawProgress.set(percentage);
                 if (currentAsset) {
                     const assetName = currentAsset.split('/').pop() || "";
-                    setCurrentAsset(assetName);
+                    // setCurrentAsset(assetName);
                     setAssetHistory((prev) => {
                         if (prev[0] === assetName) return prev;
                         return [assetName, ...prev].slice(0, 5);

@@ -9,7 +9,7 @@ export default function LenisProvider({
     children: React.ReactNode;
 }) {
     useEffect(() => {
-        const lenis = initLenis();
+        initLenis();
         return () => {
             destroyLenis();
         };

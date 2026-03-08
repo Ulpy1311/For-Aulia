@@ -27,7 +27,7 @@ export function ChangelogContent() {
 
                 <div className="space-y-5 mt-2">
                     <p className="font-serif text-xl md:text-2xl lg:text-3xl text-foreground leading-[1.2] tracking-tight text-balance [text-align:justify]">
-                        This page keeps track of this website's development from the initial version to the latest.
+                        This page keeps track of this website&apos;s development from the initial version to the latest.
                     </p>
                     <p className="font-serif text-base md:text-lg text-foreground/60 leading-relaxed [text-align:justify]">
                         Every change is recorded for transparency. From small fixes and UI refinements to major feature upgrades.
