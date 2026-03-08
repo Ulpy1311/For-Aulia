@@ -37,7 +37,7 @@ export function StoryGrid({ memoriesPromise }: StoryGridProps) {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.9 }}
                             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                            className="group flex flex-col bg-card border-2 border-border/80 overflow-hidden hover:shadow-lg transition-all duration-500 rounded-lg cursor-pointer hover:-translate-y-0.5"
+                            className={`group flex flex-col bg-card border-2 border-border/80 overflow-hidden hover:shadow-lg transition-all duration-500 rounded-lg cursor-pointer hover:-translate-y-0.5 ${memory.isHidden ? "blur-sm select-none pointer-events-none opacity-50 contrast-75 brightness-75" : ""}`}
                             onClick={() => setSelectedMemory(memory)}
                             role="button"
                             tabIndex={0}
