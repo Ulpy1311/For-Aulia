@@ -96,6 +96,7 @@
 
   --font-sans: var(--font-body-stack);
   --font-display: var(--font-anton), impact, sans-serif;
+  --font-instrument: var(--font-instrument), "Instrument Serif", serif;
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
   --font-serif: var(--font-serif-current), "Source Serif 4", "Lora", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 
@@ -179,58 +180,32 @@
   }
 }
 
-/* MacOS Custom Cursors */
-@media (hover: hover) and (pointer: fine) {
+/* View Transitions */
+::view-transition-old(root) {
+  animation: 600ms cubic-bezier(0.76, 0, 0.24, 1) fade-out;
+}
 
-  body,
-  html {
-    cursor: url('/cursors/mac-default.svg') 1 1, auto;
-  }
+::view-transition-new(root) {
+  animation: 600ms cubic-bezier(0.76, 0, 0.24, 1) fade-in;
+}
 
-  /* Elements that should use pointer */
-  a,
-  button,
-  summary,
-  label[for],
-  [role="button"],
-  [data-cursor="interactive"],
-  .cursor-pointer,
-  select,
-  a *,
-  button *,
-  summary *,
-  label[for] * {
-    cursor: url('/cursors/mac-pointer.svg') 10 2, pointer;
-  }
+@keyframes fade-out {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-30px); }
+}
 
-  /* Elements that typically contain selectable text */
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  span,
-  td,
-  th,
-  li,
-  dt,
-  dd,
-  blockquote,
-  q,
-  cite,
-  code,
-  pre,
-  input,
-  textarea,
-  [contenteditable="true"] {
-    cursor: url('/cursors/mac-text.svg') 12 12, text;
-  }
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Utilities */
 @layer utilities {
+  .animated-element {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
   .desktop-shell {
     width: min(100%, var(--desktop-content-max));
     margin-inline: auto;

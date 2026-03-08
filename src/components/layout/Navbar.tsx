@@ -35,9 +35,9 @@ export function Navbar() {
 
     return (
         <>
-            <nav className="fixed w-full z-40 bg-background/90 backdrop-blur-md transition-colors duration-300 font-sans">
-                <div className="desktop-shell h-14 md:h-16 flex items-center justify-between">
-                    <Link href="/" className="font-display text-xl md:text-2xl font-bold uppercase tracking-normal text-foreground">
+            <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-auto max-w-[95vw] md:max-w-fit pointer-events-none">
+                <div className="flex bg-background/20 backdrop-blur-xl border border-white/10 dark:border-white/5 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.3)] rounded-full px-4 md:px-6 h-12 md:h-14 items-center justify-between pointer-events-auto gap-4 md:gap-8">
+                    <Link href="/" className="font-display text-base md:text-lg font-bold uppercase tracking-tight text-foreground whitespace-nowrap px-2">
                         For Aulia
                     </Link>
 
@@ -47,9 +47,9 @@ export function Navbar() {
                             <Link
                                 key={item.label}
                                 href={item.href}
-                                className={`text-xs font-medium transition-colors uppercase tracking-wide ${pathname === item.href
-                                        ? 'text-foreground'
-                                        : 'text-foreground/80 hover:text-foreground'
+                                className={`text-[10px] font-bold transition-all uppercase tracking-[0.1em] ${pathname === item.href
+                                    ? 'text-foreground'
+                                    : 'text-foreground/40 hover:text-foreground'
                                     }`}
                             >
                                 {item.label}
@@ -57,26 +57,34 @@ export function Navbar() {
                         ))}
                     </div>
 
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-2 md:space-x-4">
                         <button
                             onClick={toggleTheme}
-                            className="p-1.5 rounded-full hover:bg-secondary transition-colors"
+                            className="p-1.5 md:p-2 rounded-full hover:bg-white/10 transition-colors text-foreground/60 hover:text-foreground"
                             aria-label="Toggle Dark Mode"
                         >
-                            <Sun className="h-4 w-4 dark:hidden" />
-                            <Moon className="h-4 w-4 hidden dark:block" />
+                            <Sun className="h-3.5 w-3.5 md:h-4 md:w-4 dark:hidden" />
+                            <Moon className="h-3.5 w-3.5 md:h-4 md:w-4 hidden dark:block" />
                         </button>
+
                         <button
                             onClick={() => setIsContactOpen(true)}
-                            className="hidden md:inline-flex border border-foreground/30 px-5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.15em] text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+                            className="hidden md:inline-flex bg-foreground text-background px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-[0.15em] hover:scale-105 transition-all duration-300 shadow-lg shadow-black/10 items-center gap-2 group/btn"
                         >
                             Contact
+                            <motion.span
+                                animate={{ x: [0, 2, 0] }}
+                                transition={{ repeat: Infinity, duration: 1.5 }}
+                                className="inline-block"
+                            >
+                                <X className="h-3 w-3 rotate-45 group-hover/btn:rotate-45 transition-transform" />
+                            </motion.span>
                         </button>
 
                         {/* Mobile Hamburger Button */}
                         <button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="md:hidden p-1.5 rounded-full hover:bg-secondary transition-colors"
+                            className="md:hidden p-1.5 rounded-full hover:bg-white/10 transition-colors text-foreground/60 hover:text-foreground"
                             aria-label={isMobileMenuOpen ? 'Close Menu' : 'Open Menu'}
                         >
                             <AnimatePresence mode="wait" initial={false}>
@@ -149,8 +157,8 @@ export function Navbar() {
                                             href={item.href}
                                             onClick={() => setIsMobileMenuOpen(false)}
                                             className={`block py-3 border-b border-border/50 text-sm font-medium uppercase tracking-wider transition-colors ${pathname === item.href
-                                                    ? 'text-foreground'
-                                                    : 'text-foreground/70 hover:text-foreground'
+                                                ? 'text-foreground'
+                                                : 'text-foreground/70 hover:text-foreground'
                                                 }`}
                                         >
                                             {item.label}

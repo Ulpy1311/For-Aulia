@@ -25,7 +25,7 @@ export function SplitLayout({
             </div>
 
             {/* Scrollable Right Column */}
-            <div className="lg:col-span-7 flex flex-col gap-8 min-w-0">
+            <div className="lg:col-span-7 flex flex-col gap-12 relative">
                 {rightContent}
             </div>
         </div>

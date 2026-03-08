@@ -54,11 +54,11 @@ export function LeftColumnContent() {
                 className="font-serif text-xl md:text-2xl lg:text-3xl text-foreground leading-[1.2] tracking-tight text-balance"
                 variants={itemVariants}
             >
-                Ini arsip jujur tentang apa yang kita lalui. Ada tawa dan lelah. Ada konflik dan rasa lega.
+                This is an honest archive of what we've been through. There was laughter and exhaustion. There were conflicts and moments of relief.
             </motion.p>
 
             <motion.div className="flex flex-wrap gap-1.5 mb-3 -mt-1" variants={itemVariants}>
-                {['Kebahagiaan', 'Kesedihan', 'Konflik', 'Kelegaan'].map((tag) => (
+                {['Happiness', 'Sadness', 'Conflict', 'Relief'].map((tag) => (
                     <span
                         key={tag}
                         className="bg-secondary px-2.5 py-1 text-[10px] font-mono uppercase tracking-[0.16em] font-bold text-secondary-foreground"
@@ -73,10 +73,10 @@ export function LeftColumnContent() {
                 variants={itemVariants}
             >
                 <p>
-                    Aku menyimpan semuanya di sini agar cerita tetap utuh. Aku tidak menyalahkan siapa pun. Aku tidak meminta masa lalu kembali. Aku hanya tidak ingin perasaan kita hilang.
+                    I keep everything here to keep the story intact. I don't blame anyone. I'm not asking for the past to return. I just don't want our feelings to fade away.
                 </p>
                 <p className="mt-6">
-                    Jika kamu membaca ini. Aku harap kamu melihat sisi manusiawinya. Kita sudah berusaha. Kita gagal berkomunikasi pada saat itu. Kemudian kita belajar cara bertumbuh dewasa.
+                    If you're reading this, I hope you see the human side of it. We tried. We failed to communicate at that time. Then we learned how to grow up.
                 </p>
             </motion.div>
 

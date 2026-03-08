@@ -29,15 +29,15 @@ export default function GalleryPage() {
 
             <div className="space-y-5 mt-2">
                 <p className="font-serif text-xl md:text-2xl lg:text-3xl text-foreground leading-[1.2] tracking-tight text-balance">
-                    Koleksi momen mentah tanpa proses edit. Kenangan nyata yang tertangkap di tengah kehidupan.
+                    A collection of raw moments without editing. Real memories captured in the middle of life.
                 </p>
                 <p className="font-serif text-base md:text-lg text-foreground/60 leading-relaxed">
-                    Gulir ke bawah. Buka foto mana saja untuk melihat catatan di dalamnya.
+                    Scroll down. Open any photo to see the notes inside.
                 </p>
             </div>
 
             <div className="flex flex-wrap gap-1.5 mb-3 -mt-1">
-                {['Momen', 'Kandid', 'Milik Kita'].map((tag) => (
+                {['Moments', 'Candid', 'Ours'].map((tag) => (
                     <span
                         key={tag}
                         className="bg-secondary px-2.5 py-1 text-[10px] font-mono uppercase tracking-[0.16em] font-bold text-secondary-foreground"
@@ -49,7 +49,7 @@ export default function GalleryPage() {
 
             <div className="max-w-none text-muted-foreground font-serif text-base leading-relaxed border-t border-border pt-8">
                 <p>
-                    Ini foto yang terasa terlalu nyata untuk memakai filter. Ada yang buram dan ada yang presisi. Semuanya memiliki makna.
+                    These photos feel too real to use filters. Some are blurry, some are precise. Everything has meaning.
                 </p>
             </div>
         </div>

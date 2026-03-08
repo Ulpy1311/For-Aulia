@@ -458,7 +458,7 @@ export const RevealWaveImage = ({
         <div ref={containerRef} className={`h-[500vh] relative ${className ?? ""}`}>
             {/* Sticky viewport-filling canvas */}
             <div
-                className="sticky top-0 h-[100dvh] w-full overflow-hidden"
+                className="sticky top-[var(--nav-height)] h-[calc(100dvh-var(--nav-height))] w-full overflow-hidden"
                 onMouseEnter={() => setIsMouseInCanvas(true)}
                 onMouseLeave={() => setIsMouseInCanvas(false)}
                 onMouseMove={handleMouseMove}

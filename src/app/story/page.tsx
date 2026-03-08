@@ -25,18 +25,18 @@ export default function StoryPage() {
 
             <div className="space-y-5 mt-2">
                 <p className="font-serif text-xl md:text-2xl lg:text-3xl text-foreground leading-[1.2] tracking-tight text-balance">
-                    Halaman ini berisi perjalanan LDR kita dari awal kenal sampai sekarang. Semuanya dimulai dari obrolan kecil di Agustus 2024.
+                    This page contains our LDR journey from the beginning until now. It all started with a small chat in August 2024.
                 </p>
                 <p className="font-serif text-base md:text-lg text-foreground/60 leading-relaxed">
-                    Kita belum pernah ketemu langsung, tapi setiap chat, call, marah, dan baikan jadi bukti kalau rasa ini tetap tumbuh meski jarak jauh.
+                    We've never met in person, but every chat, call, argument, and reconciliation is proof that this feeling keeps growing despite the distance.
                 </p>
                 <p className="font-serif text-sm md:text-base text-foreground/50 leading-relaxed">
-                    Buka kartu mana saja buat lihat fase cerita kita.
+                    Open any card to see our story phase.
                 </p>
             </div>
 
             <div className="flex flex-wrap gap-1.5 mb-3 -mt-1">
-                {['LDR', 'Jarak', 'Bertahan', 'Kita'].map((tag) => (
+                {['LDR', 'Distance', 'Enduring', 'Us'].map((tag) => (
                     <span
                         key={tag}
                         className="bg-secondary px-2.5 py-1 text-[10px] font-mono uppercase tracking-[0.16em] font-bold text-secondary-foreground"
@@ -48,10 +48,10 @@ export default function StoryPage() {
 
             <div className="max-w-none text-muted-foreground font-serif text-base leading-relaxed border-t border-border pt-8">
                 <p>
-                    Aku tulis semua ini supaya cerita kita tetap utuh. Bukan buat nyalahin siapa pun, tapi buat nginget kalau kita sama-sama berjuang dari jarak yang tidak dekat.
+                    I wrote all this so our story stays intact. Not to blame anyone, but to remember that we both struggled from a distance that wasn't close.
                 </p>
                 <p className="mt-4">
-                    Dari awal ketemu sampai fase paling berat, semuanya ada di sini.
+                    From the first encounter to the hardest phase, everything is here.
                 </p>
             </div>
         </div>

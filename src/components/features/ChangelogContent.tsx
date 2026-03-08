@@ -27,18 +27,18 @@ export function ChangelogContent() {
 
                 <div className="space-y-5 mt-2">
                     <p className="font-serif text-xl md:text-2xl lg:text-3xl text-foreground leading-[1.2] tracking-tight text-balance [text-align:justify]">
-                        Halaman ini menyimpan jejak pengembangan website ini dari versi awal sampai versi terbaru.
+                        This page keeps track of this website's development from the initial version to the latest.
                     </p>
                     <p className="font-serif text-base md:text-lg text-foreground/60 leading-relaxed [text-align:justify]">
-                        Semua perubahan dicatat biar prosesnya transparan. Mulai dari perbaikan kecil, penyempurnaan UI, sampai upgrade fitur utama.
+                        Every change is recorded for transparency. From small fixes and UI refinements to major feature upgrades.
                     </p>
                     <p className="font-serif text-sm md:text-base text-foreground/50 leading-relaxed">
-                        Scroll untuk lihat daftar perubahan versi.
+                        Scroll to see the version history.
                     </p>
                 </div>
 
                 <div className="flex flex-wrap gap-1.5 mb-3 -mt-1">
-                    {['Rilis', 'Perbaikan', 'Evolusi'].map((tag) => (
+                    {['Release', 'Fix', 'Evolution'].map((tag) => (
                         <span
                             key={tag}
                             className="bg-secondary px-2.5 py-1 text-[10px] font-mono uppercase tracking-[0.16em] font-bold text-secondary-foreground"
@@ -50,10 +50,10 @@ export function ChangelogContent() {
 
                 <div className="max-w-none text-muted-foreground font-serif text-base leading-relaxed border-t border-border pt-8">
                     <p className="[text-align:justify]">
-                        Changelog ini jadi catatan perkembangan yang konsisten. Tujuannya agar setiap update punya konteks yang jelas.
+                        This changelog serves as a consistent record of progress. The goal is to give every update a clear context.
                     </p>
                     <p className="mt-4 [text-align:justify]">
-                        Kamu tetap bisa buka halaman lain lewat navigasi cepat di bawah.
+                        You can still access other pages via the quick navigation below.
                     </p>
                 </div>
             </div>

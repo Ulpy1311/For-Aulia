@@ -14,30 +14,30 @@ interface EmotionLabel {
 const labels: EmotionLabel[] = [
     {
         id: 'joy',
-        label: 'KEBAHAGIAAN',
-        price: 'Waktu',
-        note: 'Tertawa sampai lupa waktu. Pulang dengan hati lega.',
+        label: 'HAPPINESS',
+        price: 'Time',
+        note: 'Laughing until we lost track of time. Going home with a light heart.',
         accent: 'text-emerald-600',
     },
     {
         id: 'grief',
-        label: 'KESEDIHAN',
-        price: 'Tidur',
-        note: 'Malam panjang dan pikiran berisik. Berusaha tetap tenang.',
+        label: 'SADNESS',
+        price: 'Sleep',
+        note: 'Long nights and noisy thoughts. Trying to stay calm.',
         accent: 'text-sky-600',
     },
     {
         id: 'anger',
-        label: 'KEMARAHAN',
+        label: 'ANGER',
         price: 'Ego',
-        note: 'Suara keras dan kata yang salah. Menyesal setelah semua mereda.',
+        note: 'Loud voices and the wrong words. Regretting after everything settles.',
         accent: 'text-rose-600',
     },
     {
         id: 'relief',
-        label: 'KELEGAAN',
-        price: 'Penerimaan',
-        note: 'Tidak bersama lagi. Kamu tetap memilih untuk menghargai.',
+        label: 'RELIEF',
+        price: 'Acceptance',
+        note: 'No longer together. You still choose to appreciate.',
         accent: 'text-violet-600',
     },
 ];
@@ -91,7 +91,7 @@ export function RelatedClients() {
                 className="max-w-3xl font-serif text-xl md:text-2xl lg:text-3xl text-foreground leading-[1.2] tracking-tight text-balance mb-10"
                 variants={itemVariants}
             >
-                Setiap fase butuh pengorbanan emosional dan energi. Fase ini membentuk cara kita bertumbuh.
+                Every phase requires emotional sacrifice and energy. These moments shape how we grow.
             </motion.p>
 
             <motion.div
@@ -119,7 +119,7 @@ export function RelatedClients() {
 
                         <div className="mt-6 border-t border-dashed border-border pt-3">
                             <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground">
-                                Bukti Emosional
+                                Emotional Proof
                             </span>
                         </div>
                     </motion.div>

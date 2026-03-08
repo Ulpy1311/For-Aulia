@@ -2,6 +2,41 @@ import React from 'react';
 
 const changes = [
     {
+        date: 'March 8, 2026',
+        version: 'v3.2.0',
+        title: 'Universal Asset Discovery & Preloading',
+        items: [
+            'Implemented automated asset discovery across all components (Story, Music, Gallery, Public).',
+            'Integrated deep preloading for external Unsplash, Genius, and Cosmos media sources.',
+            'Optimized the loader to wait for full project hydration, ensuring zero-latency transitions.',
+            'Updated README with final technical architecture and performance strategy.',
+        ],
+    },
+    {
+        date: 'March 8, 2026',
+        version: 'v3.1.0',
+        title: 'Premium "Engineer-Style" Loader',
+        items: [
+            'Created a high-fidelity loading experience with technical diagnostic aesthetics.',
+            'Added smooth progress interpolation (000-100) using spring physics.',
+            'Implemented a real-time Asset Terminal to log every file path being cached.',
+            'Designed blueprint grid backgrounds and scanning line effects for a premium feel.',
+            'Enforced a 5.5s cinematic duration to ensure visual immersion.',
+        ],
+    },
+    {
+        date: 'March 6, 2026',
+        version: 'v3.0.0',
+        title: 'Premium UX Overhaul & English Migration',
+        items: [
+            'Remade the Music Player with a premium glassmorphism design, advanced playback controls, and smooth realtime feedback.',
+            'Implemented a permanent English-first localization strategy, removing the global language toggle for a cleaner UI.',
+            'Redesigned the Notes system to display humanized Indonesian translations inline, ensuring an intimate and natural reading experience.',
+            'Optimized the expanded and collapsed player states with high-performance animations (RAF) and better volume scaling.',
+        ],
+    },
+
+    {
         date: 'March 5, 2026',
         version: 'v2.5.0',
         title: 'Global UI Standardization & Navigation',

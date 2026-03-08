@@ -5,14 +5,15 @@ import {
   Playfair_Display,
   Inter,
   JetBrains_Mono,
+  Instrument_Serif,
 } from 'next/font/google';
 import './globals.css';
-import SmoothScroll from '@/components/SmoothScroll';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { AppProviders } from '@/components/AppProviders';
 import { ThemeTransitionProvider } from '@/components/animations/ThemeTransition';
 import { Navbar } from '@/components/layout/Navbar';
 import { ClientOverlays } from '@/components/layout/ClientOverlays';
+import { AppWrapper } from '@/components/layout/AppWrapper';
 import { Footer } from '@/components/layout/Footer';
 
 const anton = Anton({
@@ -48,6 +49,13 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ['400', '700'],
 });
 
+const instrumentSerif = Instrument_Serif({
+  variable: '--font-instrument',
+  subsets: ['latin'],
+  weight: '400',
+  style: 'italic',
+});
+
 export const metadata: Metadata = {
   title: 'For Aulia',
   description: 'A digital letter about love, loss, growth, and the memories that still deserve respect.',
@@ -68,36 +76,43 @@ export const metadata: Metadata = {
   },
 };
 
+import { ViewTransitions } from 'next-view-transitions';
+import LenisProvider from '@/components/providers/LenisProvider';
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        suppressHydrationWarning
-        className={`${anton.variable} ${playfairDisplay.variable} ${sourceSerif4.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased font-sans bg-background text-foreground transition-colors duration-300`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange
+    <ViewTransitions>
+      <html lang="en" suppressHydrationWarning>
+        <body
+          suppressHydrationWarning
+          className={`${anton.variable} ${playfairDisplay.variable} ${sourceSerif4.variable} ${inter.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable} antialiased font-sans bg-background text-foreground transition-colors duration-300`}
         >
-          <AppProviders>
-            <ThemeTransitionProvider>
-              <SmoothScroll>
-                <Navbar />
-                <ClientOverlays />
-                {children}
-                <Footer />
-              </SmoothScroll>
-            </ThemeTransitionProvider>
-          </AppProviders>
-        </ThemeProvider>
-      </body>
-    </html>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={false}
+            disableTransitionOnChange
+          >
+            <AppProviders>
+              <ThemeTransitionProvider>
+                <LenisProvider>
+                  <AppWrapper>
+                    <Navbar />
+                    <ClientOverlays />
+                    {children}
+                    <Footer />
+                  </AppWrapper>
+                </LenisProvider>
+              </ThemeTransitionProvider>
+            </AppProviders>
+          </ThemeProvider>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
 
