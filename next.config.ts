@@ -19,6 +19,15 @@ const nextConfig: NextConfig = {
   compress: true,
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion", "gsap", "splitting"],
+    turbo: {
+      rules: {
+        "*.glsl": ["raw-loader", "glslify-loader"],
+        "*.vs": ["raw-loader", "glslify-loader"],
+        "*.fs": ["raw-loader", "glslify-loader"],
+        "*.vert": ["raw-loader", "glslify-loader"],
+        "*.frag": ["raw-loader", "glslify-loader"],
+      },
+    },
   },
   webpack: (config) => {
     config.module.rules.push({
